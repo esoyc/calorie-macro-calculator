@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply font-sans;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-emerald-600/40 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-emerald-600/60;
+}
+
+/* Recharts tooltip dark mode fix */
+.dark .recharts-default-tooltip {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #f3f4f6 !important;
+}
+.dark .recharts-tooltip-label {
+  color: #f3f4f6 !important;
+}
+.dark .recharts-tooltip-item {
+  color: #e5e7eb !important;
+}
+
+/* Number input cleanup */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
